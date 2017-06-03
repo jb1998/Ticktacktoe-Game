@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -83,6 +84,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 buttons[i][j].setImageResource(R.drawable.tick1);
+                buttons[i][j].setScaleType(ImageView.ScaleType.CENTER_CROP);
                 buttons[i][j].setPlayer(NO_PLAYER);
             }
         }
@@ -112,6 +114,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 params.setMargins(5, 5, 5, 5);
                 buttons[i][j].setLayoutParams(params);
                 buttons[i][j].setImageResource(R.drawable.tick1);
+                buttons[i][j].setScaleType(ImageView.ScaleType.CENTER_CROP);
                 buttons[i][j].setPlayer(NO_PLAYER);
                 buttons[i][j].setOnClickListener(this);
                 rows[i].addView(buttons[i][j]);
@@ -143,9 +146,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (player1Turn) {
             b.setPlayer(PLAYER1);
             b.setImageResource(R.drawable.tick1a);
+            b.setScaleType(ImageView.ScaleType.CENTER_CROP);
         } else {
             b.setPlayer(PLAYER2);
             b.setImageResource(R.drawable.tick2aa);
+            b.setScaleType(ImageView.ScaleType.CENTER_CROP);
         }
 
         int status = gameStatus();
